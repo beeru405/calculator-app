@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Calculator</title>
+    <script>
+        function calculate() {
+            var num1 = parseInt(document.getElementById('num1').value);
+            var num2 = parseInt(document.getElementById('num2').value);
+            var operation = document.getElementById('operation').value;
+
+            var result;
+            switch (operation) {
+                case 'add':
+                    result = num1 + num2;
+                    break;
+                case 'subtract':
+                    result = num1 - num2;
+                    break;
+                case 'multiply':
+                    result = num1 * num2;
+                    break;
+                case 'divide':
+                    result = num1 / num2;
+                    break;
+                default:
+                    result = 'Invalid operation';
+            }
+
+            document.getElementById('result').innerHTML = 'Result: ' + result;
+        }
+    </script>
+</head>
+<body>
+    <h1>Web Calculator</h1>
+    <label for="num1">Number 1:</label>
+    <input type="text" id="num1"><br>
+
+    <label for="operation">Operation:</label>
+    <select id="operation">
+        <option value="add">Add</option>
+        <option value="subtract">Subtract</option>
+        <option value="multiply">Multiply</option>
+        <option value="divide">Divide</option>
+    </select><br>
+
+    <label for="num2">Number 2:</label>
+    <input type="text" id="num2"><br>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <p id="result">Result: </p>
+</body>
+</html>
